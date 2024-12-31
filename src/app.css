@@ -1,0 +1,40 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+    @font-face {
+        font-family: 'GeistMono';
+        src: url('/fonts/GeistMono-Book.otf') format('otf');
+        font-weight: 400;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'GeistMono';
+        src: url('/fonts/GeistMono-Medium.otf') format('otf');
+        font-weight: 500;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'GeistMono';
+        src: url('/fonts/GeistMono-Bold.otf') format('otf');
+        font-weight: 700;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'GeistMono';
+        src: url('/fonts/GeistMono-Black.otf') format('otf');
+        font-weight: 800;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'GeistMono';
+        src: url('/fonts/GeistMono-Ultra.otf') format('otf');
+        font-weight: 900;
+        font-display: swap;
+    }
+}
