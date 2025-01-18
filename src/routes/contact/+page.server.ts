@@ -17,10 +17,8 @@ export const load = async () => {
 export const actions = {
     contactFormSubmit: async ({ request }) => {
         const form = await superValidate(request, zod(contactFormSchema));
-        console.log(form);
 
         if (!form.valid) {
-            // Again, return { form } and things will just work.
             return fail(400, { form });
         }
 
@@ -32,12 +30,15 @@ export const actions = {
                 email: form.data.email,
                 message: form.data.message
             });
-            console.log('db write');
         } catch (e) {
             console.error(e);
+            throw new Error('Failed to insert data');
         }
 
         // Display a success status message
-        return message(form, 'Form posted successfully!');
+        return message(
+            form,
+            'Form submitted successfully! I will respond to you soon.'
+        );
     }
 } satisfies Actions;

@@ -16,6 +16,7 @@
         "db:setup": "touch local.db",
         "db:generate": "drizzle-kit generate",
         "db:migrate": "drizzle-kit migrate",
+        "db:migrate:prod": "pnpm dotenv -e ./.env.production -- drizzle-kit migrate",
         "db:push": "drizzle-kit push",
         "db:studio": "drizzle-kit studio",
         "------ 🧪🧪 TESTS 🧪🧪 -------": "------ 🧪🧪 TESTS 🧪🧪 -------",

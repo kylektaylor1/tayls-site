@@ -17,8 +17,10 @@
 <div class="container flex flex-col gap-8">
     <h1 class="text-2xl font-semibold text-ctp-blue lg:text-3xl">Contact Me</h1>
 
-    <div class="rounded-2xl border border-ctp-lavender bg-ctp-mantle p-6">
-        {#if $message}<h3 class="">
+    <div
+        class="flex flex-col gap-6 rounded-2xl border border-ctp-lavender bg-ctp-mantle p-6"
+    >
+        {#if $message}<h3 class="text-lg text-ctp-green">
                 {$message}
             </h3>{/if}
         <form

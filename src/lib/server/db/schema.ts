@@ -65,9 +65,9 @@ export const projectTagTableRelations = relations(
 
 export const contactTable = sqliteTable('contact', {
     ...baseColumns,
-    name: text('text'),
-    email: text('text'),
-    message: text('text')
+    name: text('name'),
+    email: text('email'),
+    message: text('message')
 });
 export type BaseContact = InferSelectModel<typeof contactTable>;
 export type BaseInsertContact = InferInsertModel<typeof contactTable>;
