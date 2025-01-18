@@ -6,8 +6,5 @@ import "sst"
 export {}
 declare module "sst" {
   export interface Resource {
-    "TaylsSiteVpc": {
-      "type": "sst.aws.Vpc"
-    }
   }
 }

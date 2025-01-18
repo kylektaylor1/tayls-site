@@ -35,8 +35,10 @@
 </script>
 
 <div class="container flex w-full flex-col items-start">
-    <h3 class="mb-2 text-3xl font-bold text-ctp-blue">My Passions</h3>
-    <p class="w-full text-lg text-ctp-text md:w-3/4">
+    <h3 class="mb-2 text-2xl font-semibold text-ctp-blue lg:text-3xl">
+        My Passions
+    </h3>
+    <p class="w-full text-ctp-text md:w-3/4 lg:text-lg">
         {`In addition to my professional pursuits, I maintain a variety of hobbies and skills that complement my work ethic. By engaging in diverse activities and pursuing personal growth, I am able to maintain a healthy work-life balance that enhances my overall productivity and performance.`}
     </p>
 
@@ -45,23 +47,25 @@
             <div class="flex items-start gap-4">
                 <div class="text-ctp-pink">
                     {#if s.icon === 'BUILD'}
-                        <BuildIcon />
+                        <BuildIcon className={'size-4 lg:size-6'} />
                     {/if}
                     {#if s.icon === 'ROCKET'}
-                        <RocketIcon />
+                        <RocketIcon className={'size-4 lg:size-6'} />
                     {/if}
                     {#if s.icon === 'CODE'}
-                        <CodeIcon />
+                        <CodeIcon className={'size-4 lg:size-6'} />
                     {/if}
                     {#if s.icon === 'TRAVEL'}
-                        <TravelIcon />
+                        <TravelIcon className={'size-4 lg:size-6'} />
                     {/if}
                 </div>
                 <div class="flex flex-col gap-1">
-                    <p class="text-2xl font-semibold text-ctp-pink">
+                    <p class="text-xl font-medium text-ctp-pink lg:text-2xl">
                         {s.label}
                     </p>
-                    <p class="text-base text-ctp-text">{s.description}</p>
+                    <p class="text-sm text-ctp-text lg:text-base">
+                        {s.description}
+                    </p>
                 </div>
             </div>
         {/each}

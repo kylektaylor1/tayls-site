@@ -107,8 +107,10 @@
 <div class="container flex flex-col gap-36">
     <div class="flex flex-col gap-8">
         <div class="flex flex-col gap-2">
-            <h1 class="text-2xl font-semibold text-ctp-blue">My Projects</h1>
-            <p class="text-base text-ctp-text">
+            <h1 class="text-2xl font-semibold text-ctp-blue lg:text-3xl">
+                My Projects
+            </h1>
+            <p class="text-sm text-ctp-text lg:text-base">
                 {`Take a look at my prior and ongoing projects, both personal and professional projects.`}
             </p>
         </div>

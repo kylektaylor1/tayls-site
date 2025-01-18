@@ -20,7 +20,7 @@
 
 <nav
     class={[
-        'sticky top-10 z-40 flex items-center gap-4 self-center rounded-full border border-ctp-lavender/50 bg-ctp-mantle px-8 py-3 text-sm transition-all duration-300',
+        'sticky top-10 z-40 flex items-center gap-4 self-center rounded-2xl border border-ctp-lavender/50 bg-ctp-mantle px-8 py-3 text-xs transition-all duration-300 md:text-sm',
         visible ? 'translate-y-0' : '-translate-y-[calc(100%+2.5rem)]'
     ]}
 >

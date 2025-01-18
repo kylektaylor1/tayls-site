@@ -1,8 +1,20 @@
-import { relations } from 'drizzle-orm';
+import {
+    relations,
+    type InferInsertModel,
+    type InferSelectModel
+} from 'drizzle-orm';
 import { sqliteTable, text, int } from 'drizzle-orm/sqlite-core';
 
-export const projectTable = sqliteTable('project', {
+const baseColumns = {
     id: int('id', { mode: 'number' }).primaryKey({ autoIncrement: true }),
+    createdAt: int('created_at', { mode: 'timestamp_ms' })
+        .notNull()
+        .$defaultFn(() => new Date()),
+    deletedAt: int('deleted_at', { mode: 'timestamp_ms' })
+};
+
+export const projectTable = sqliteTable('project', {
+    ...baseColumns,
     name: text('name').notNull(),
     slug: text('slug').notNull().unique(),
     description: text('description'),
@@ -20,7 +32,7 @@ export const projectTableRelations = relations(
 );
 
 export const tagTable = sqliteTable('tag', {
-    id: int('id', { mode: 'number' }).primaryKey({ autoIncrement: true }),
+    ...baseColumns,
     name: text('name').notNull().unique(),
     type: text({ enum: ['SKILL', 'BLOG'] }).notNull()
 });
@@ -30,7 +42,7 @@ export const tagTableRelations = relations(tagTable, ({ many }) => ({
 }));
 
 export const projectTagTable = sqliteTable('project_tag', {
-    id: int('id', { mode: 'number' }).primaryKey({ autoIncrement: true }),
+    ...baseColumns,
     projectId: int('project_id', { mode: 'number' }).references(
         () => projectTable.id
     ),
@@ -50,3 +62,12 @@ export const projectTagTableRelations = relations(
         })
     })
 );
+
+export const contactTable = sqliteTable('contact', {
+    ...baseColumns,
+    name: text('text'),
+    email: text('text'),
+    message: text('text')
+});
+export type BaseContact = InferSelectModel<typeof contactTable>;
+export type BaseInsertContact = InferInsertModel<typeof contactTable>;
