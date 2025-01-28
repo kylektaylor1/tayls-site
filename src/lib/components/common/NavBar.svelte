@@ -14,34 +14,43 @@
         }
         ly = window.scrollY;
     }
+
+    const items: { slug: string; label: string }[] = [
+        {
+            slug: '/projects',
+            label: 'Projects'
+        },
+        {
+            slug: '/about',
+            label: 'About'
+        },
+        {
+            slug: '/contact',
+            label: 'Contact Me'
+        },
+        {
+            slug: '/blog',
+            label: 'Blog'
+        }
+    ];
 </script>
 
 <svelte:window on:scroll={handleScroll} />
 
 <nav
     class={[
-        'sticky top-10 z-40 flex items-center gap-4 self-center rounded-2xl border border-ctp-lavender/50 bg-ctp-mantle px-8 py-3 text-xs transition-all duration-300 md:text-sm',
+        'sticky top-10 z-40 flex items-center gap-6 self-center rounded-2xl border border-ctp-lavender/50 bg-ctp-mantle px-8 py-3 text-xs transition-all duration-300 md:text-sm',
         visible ? 'translate-y-0' : '-translate-y-[calc(100%+2.5rem)]'
     ]}
 >
-    <a
-        href="/projects"
-        class={[
-            page.url.pathname === '/projects'
-                ? 'text-ctp-pink'
-                : 'text-ctp-text'
-        ]}>Projects</a
-    >
-    <a
-        href="/about"
-        class={[
-            page.url.pathname === '/about' ? 'text-ctp-pink' : 'text-ctp-text'
-        ]}>About</a
-    >
-    <a
-        href="/contact"
-        class={[
-            page.url.pathname === '/contact' ? 'text-ctp-pink' : 'text-ctp-text'
-        ]}>Contact</a
-    >
+    {#each items as item}
+        <a
+            href={item.slug}
+            class={[
+                page.url.pathname === '/projects'
+                    ? 'text-ctp-pink'
+                    : 'text-ctp-text'
+            ]}>{item.label}</a
+        >
+    {/each}
 </nav>

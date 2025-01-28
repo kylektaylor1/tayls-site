@@ -1,6 +1,7 @@
 <script lang="ts">
     import TextAreaField from '$lib/components/common/TextAreaField.svelte';
     import TextField from '$lib/components/common/TextField.svelte';
+    import { PageH1 } from '$lib/components/common/Typography.svelte';
     import MailIcon from '$lib/components/icons/MailIcon.svelte';
     import XIcon from '$lib/components/icons/XIcon.svelte';
     import type { ContactForm } from '$lib/utils/validate.utils.ts';
@@ -14,8 +15,13 @@
     const { message, enhance } = superform;
 </script>
 
-<div class="container flex flex-col gap-8">
-    <h1 class="text-2xl font-semibold text-ctp-blue lg:text-3xl">Contact Me</h1>
+<div class="container flex flex-col gap-8 lg:gap-12">
+    <div class="flex flex-col gap-4">
+        {@render PageH1('Contact Me')}
+        <p class="text-sm text-ctp-text lg:text-base">
+            {`Want to get into contact with me? Fill out the below form or send me an email! I'll get back shortly.`}
+        </p>
+    </div>
 
     <div
         class="flex flex-col gap-6 rounded-2xl border border-ctp-lavender bg-ctp-mantle p-6"

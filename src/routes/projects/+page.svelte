@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { Project as ProjectT } from '$lib/types/generic.types';
     import Project from '$lib/components/project/Project.svelte';
+    import { PageH1 } from '$lib/components/common/Typography.svelte';
 
     const projects: ProjectT[] = [
         {
@@ -105,11 +106,9 @@
 </script>
 
 <div class="container flex flex-col gap-36">
-    <div class="flex flex-col gap-8">
-        <div class="flex flex-col gap-2">
-            <h1 class="text-2xl font-semibold text-ctp-blue lg:text-3xl">
-                My Projects
-            </h1>
+    <div class="flex flex-col gap-8 lg:gap-12">
+        <div class="flex flex-col gap-4">
+            {@render PageH1('My Projects')}
             <p class="text-sm text-ctp-text lg:text-base">
                 {`Take a look at my prior and ongoing projects, both personal and professional projects.`}
             </p>
