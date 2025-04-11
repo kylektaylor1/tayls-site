@@ -1,30 +1,46 @@
 <script lang="ts">
-    const softDevSkills: string[] = [
-        'Node',
-        'Hono.js',
-        'Nest.js',
-        'Bun',
-        'Rest API',
-        'PostgreSQL',
-        'MySQL',
-        'SQLite',
-        'Hasura',
-        'AWS',
-        'DigitalOcean',
-        'Linux',
-        'Ubuntu',
-        'Arch'
+    import PillText from '../common/PillText.svelte';
+
+    const languages: string[] = [
+        'TypeScript | Proficient',
+        'JavaScript | Proficient',
+        'Go | Emerging',
+        'SQL | Proficient',
+        'CSS | Proficient',
+        'HTML | Proficient',
+        'Python | Emerging',
+        'Bash | Emerging'
     ];
 
-    const frontDevSkills: string[] = [
+    const technologies: string[] = [
         'React.js',
         'Next.js',
-        'Svelte',
-        'GraphQL',
-        'TanStack Query',
         'Astro',
+        'Vite',
         'Tailwindcss',
-        'SCSS'
+        'Svelte',
+        'Node.js',
+        'Bun',
+        'Express',
+        'Hono',
+        'GraphQL',
+        'Postgres',
+        'MySQL',
+        'SQLite',
+        'Docker',
+        'GitHub Actions',
+        'Jest',
+        'Playwright',
+        'Vitest'
+    ];
+
+    const concepts: string[] = [
+        'REST API',
+        'GraphQL API',
+        'Severless',
+        'OOP',
+        'CI/CD',
+        'Authentication & Authorization'
     ];
 </script>
 
@@ -33,51 +49,42 @@
         My Skills
     </h2>
     <div
-        class="grid grid-cols-1 divide-x divide-ctp-lavender border border-ctp-lavender lg:grid-cols-2"
+        class="grid grid-cols-1 divide-y divide-ctp-lavender rounded-2xl border border-ctp-lavender md:grid-cols-3 md:divide-x"
     >
         <div class="flex flex-col gap-4 p-6">
             <div class="flex flex-col gap-2">
                 <h3 class="text-lg font-medium text-ctp-pink lg:text-xl">
-                    {`Software Development`}
+                    {`Languages`}
                 </h3>
-                <p class="text-sm text-ctp-text lg:text-base">
-                    {`Passionate about solving user and business problems with scalable and robust programs. TypeScript, JavaScript, Python, SQL.`}
-                </p>
             </div>
-            <div class="flex flex-col gap-2">
-                <p class="text-xs text-ctp-subtext1 lg:text-sm">Technologies</p>
-                <div class="flex flex-row flex-wrap gap-1">
-                    {#each softDevSkills as s}
-                        <div
-                            class="rounded-2xl bg-ctp-rosewater px-2 py-1 text-xs lg:text-sm"
-                        >
-                            {s}
-                        </div>
-                    {/each}
-                </div>
+            <div class="flex flex-row flex-wrap gap-2">
+                {#each languages as l}
+                    <PillText label={l} />
+                {/each}
             </div>
         </div>
         <div class="flex flex-col gap-4 p-6">
             <div class="flex flex-col gap-2">
                 <h3 class="text-lg font-medium text-ctp-pink lg:text-xl">
-                    {`Frontend Dev`}
+                    {`Techologies`}
                 </h3>
-                <p class="text-sm text-ctp-text lg:text-base">
-                    {`Experience in creating user interfaces, from marketing sites to dashboard applications. React, Next, HTML, CSS.`}
-                </p>
             </div>
+            <div class="flex flex-row flex-wrap gap-1">
+                {#each technologies as t}
+                    <PillText label={t} />
+                {/each}
+            </div>
+        </div>
+        <div class="flex flex-col gap-4 p-6">
             <div class="flex flex-col gap-2">
-                <p class="text-xs text-ctp-subtext1 lg:text-sm">Technologies</p>
-
-                <div class="flex flex-row flex-wrap gap-1">
-                    {#each frontDevSkills as s}
-                        <div
-                            class="rounded-2xl bg-ctp-rosewater px-2 py-1 text-xs lg:text-sm"
-                        >
-                            {s}
-                        </div>
-                    {/each}
-                </div>
+                <h3 class="text-lg font-medium text-ctp-pink lg:text-xl">
+                    {`Concepts`}
+                </h3>
+            </div>
+            <div class="flex flex-row flex-wrap gap-1">
+                {#each concepts as c}
+                    <PillText label={c} />
+                {/each}
             </div>
         </div>
     </div>

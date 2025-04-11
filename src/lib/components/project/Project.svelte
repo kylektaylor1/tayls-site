@@ -4,6 +4,7 @@
     import BuildingOfficeIcon from '$lib/components/icons/BuildingOfficeIcon.svelte';
     import GithubIcon from '$lib/components/icons/GithubIcon.svelte';
     import LinkIcon from '$lib/components/icons/LinkIcon.svelte';
+    import PillText from '../common/PillText.svelte';
 
     let {
         title,
@@ -70,6 +71,7 @@
                 <a
                     href={siteUrl}
                     class="flex items-center gap-3 hover:cursor-pointer hover:underline"
+                    target={'_blank'}
                 >
                     <LinkIcon className={'size-5 text-ctp-text'} />
                     <p class="text-sm text-ctp-text lg:text-base">
@@ -93,11 +95,7 @@
         <p class="text-xs text-ctp-subtext1 lg:text-sm">Tech Stack</p>
         <div class="flex flex-row flex-wrap gap-2">
             {#each tech as t}
-                <div
-                    class="rounded-2xl bg-ctp-green/50 px-2 py-1 text-xs text-ctp-base lg:text-sm"
-                >
-                    {t}
-                </div>
+                <PillText label={t} />
             {/each}
         </div>
     </div>

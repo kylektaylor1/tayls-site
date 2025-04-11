@@ -2,6 +2,7 @@
     import kyleIbiza from '$lib/assets/kyle-ibiza.jpg';
     import XIcon from '../icons/XIcon.svelte';
     import GithubIcon from '../icons/GithubIcon.svelte';
+    import LinkedinIcon from '../icons/LinkedinIcon.svelte';
 </script>
 
 <div class="container flex items-center gap-12">
@@ -30,6 +31,13 @@
                 target="_blank"
             >
                 <GithubIcon className={`size-4 lg:size-6`} />
+            </a>
+            <a
+                href="https://www.linkedin.com/in/kyle-taylor-4588ab1b3/"
+                class="hover:cursor-pointer"
+                target="_blank"
+            >
+                <LinkedinIcon className={`size-4 lg:size-6`} />
             </a>
         </div>
     </div>

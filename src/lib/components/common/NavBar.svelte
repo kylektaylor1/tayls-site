@@ -17,6 +17,10 @@
 
     const items: { slug: string; label: string }[] = [
         {
+            slug: '/',
+            label: 'Home'
+        },
+        {
             slug: '/projects',
             label: 'Projects'
         },
@@ -47,7 +51,7 @@
         <a
             href={item.slug}
             class={[
-                page.url.pathname === '/projects'
+                page.url.pathname === item.slug
                     ? 'text-ctp-pink'
                     : 'text-ctp-text'
             ]}>{item.label}</a

@@ -5,6 +5,27 @@
 
     const projects: ProjectT[] = [
         {
+            title: 'Stay Plus+',
+            description: `A monolith of one server with four websites, powering the new expansion of Stay Plugged In. The REST API server supports the needs of four websites, three of which are public facing websites with one administrative dashboard. The REST API server manages secure access via API keys and JWT tokens for user authentication and authorization to application data resources.`,
+            company: 'Stay Plugged In',
+            siteUrl: 'https://plus.staypluggedin.com',
+            callouts: [
+                'Created to serve multiple "client islands" to meet quick-paced business demands for iteration and sub-brand product launches quickly and adeptly.',
+                'Concepts: Monorepo CI/CD, REST API, Multi-Role User Access, S3 Object Storage'
+            ],
+            type: 'PROFESSIONAL',
+            tech: [
+                'Astro',
+                'React.js',
+                'Severless',
+                'Node.js',
+                'Hono',
+                'SQLite',
+                'Turborepo',
+                'DigitalOcean'
+            ]
+        },
+        {
             title: 'Stay Plugged In',
             description: `As the product manager and one of the contributing developers, this full stack web application serves thousands of users to find or recruit for scholarship opportunities. Within my role, I ideate and communicate with several company department leaders to translate business needs for customers into deployed features.`,
             company: 'Stay Plugged In',
@@ -24,14 +45,13 @@
                 'Contentful',
                 'Hasura',
                 'Stripe',
-                'DigitalOcean',
-                'Deployed to Vercel'
+                'DigitalOcean'
             ]
         },
         {
             title: 'Emerge OMS',
             description:
-                'After seeing quick growth, a sister merchandise and e-commerce company (to SPIN) required a custom order management system. Working with the founder directly, I created a web application to automate several workflows. The order sync workflow is as follows: upon a purchase via the Shopify site, a webhook triggered (a) the order to be synced to an application database, (b) calculated storefront revenue share, and (c) listed line items to be processed by third party vendors in a table to track the stages of production. The system allows for vendors and administrators to interact with orders at various stages of production.',
+                'An order management system, where webhooks are consumed from Shopify to sync order data to allow administrative control over orders, products and profit sharing. The system allows for vendors and administrators to interact with orders at various stages of production and generate revenue and cost reports.',
             company: 'Emerge Apparel',
             callouts: [
                 'This OMS has saved affected employees 15+ labor hours a week.',
@@ -43,14 +63,14 @@
                 'React.js',
                 'Severless',
                 'Node.js',
-                'Shopify GQL',
-                'Upstash - QStash',
-                'Deployed to Vercel'
+                'Shopify GraphQL API',
+                'Webhooks',
+                'Upstash - QStash'
             ]
         },
         {
             title: 'SPIN Coca-Cola All-Stars',
-            description: `As the sole developer on the project, this web app delivers critical business needs for the company’s (SPIN) marquee annual event. From database migrations, to the front end UI, every line of code was written to create a seamless user experience to gather nominations to become an All-Star. The system is designed to support multiple roles, allowing for nominees, nominators, judges and internal admins to access and mutate the appropriate data. In addition to meeting the event's needs, I also worked closely with Coca-Cola Consolidated to ensure sponsor requirements were met.`,
+            description: `As the sole contributor, this web app collects nominations for the marquee sponsored event. The system is designed to support multiple roles, allowing for nominees, nominators, judges and internal admins to access and mutate the appropriate data.`,
             company: 'Stay Plugged In',
             siteUrl: 'https://allstars.staypluggedin.com',
             callouts: [
@@ -65,13 +85,30 @@
                 'Tailwindcss',
                 'Turbo',
                 'Severless',
-                'Node.js',
-                'Deployed to Vercel'
+                'Node.js'
+            ]
+        },
+        {
+            title: 'Custom RTMP / SRT Relay Broadcast Server',
+            description: `A set of containerized services that (1) ingest RTMP feeds from a broadcast client, then (2) relay the A/V feed via the SRT relay protocol to an end consumer client. This allows the broadcaster to be able to capture 1080p/60fps A/V feeds over the network (and/or remotely) to then produce a live stream.`,
+            company: 'Stay Plugged In',
+            callouts: [
+                'Includes concepts: RTMP Ingest, SRT Relay, FFMPEG, Docker Containers, Microsservices'
+            ],
+            type: 'PROFESSIONAL',
+            tech: [
+                'Express',
+                'Docker',
+                'Bash Scripts',
+                'FFMPEG',
+                'RTMP',
+                'SRT Relay',
+                'DigitalOcean'
             ]
         },
         {
             title: 'Clash Challenges',
-            description: `Clash Challenges is a tournament platform specifically for esports competitions. This platform is build as a multi-tenant, multi-role system, where organizations can be incorporated into the system, which creates them an "espn.com"-esque website to serve up to date tournament, league and related data. The application has a centric dashboard for admins and users to inteact with the appropriate data for them. Admins can create entire events, with rosters, varying tournament structures and update data as needed.`,
+            description: `A pairing of a multi-tenant suite of client sites + an administrative dashboard to manage tournament operations, focused on esports. The stack allowed for the management of long running events, seasons, and brackets across a multi-organizational level of access for many users.`,
             company: 'Stay Plugged In',
             siteUrl: 'https://clashchallenges.io',
             callouts: [
@@ -89,18 +126,17 @@
                 'Severless',
                 'Node.js',
                 'Hasura',
-                'DigitalOcean',
-                'Deployed to Vercel'
+                'DigitalOcean'
             ]
         },
         {
             title: 'My Portfolio Website',
             description: `"tayls.dev" hosts my personal story, blog and travel photography collections. I often use this site as a playground for new ideas, new releases and new technology to test and validate new features to then use in larger applications for my professional pursuits.`,
             siteUrl: 'https://tayls.dev',
-            ghLink: 'https://tayls.dev',
+            ghLink: 'https://github.com/kylektaylor1/tayls-site',
             callouts: ['No real callouts or impact here :)'],
-            type: 'PROFESSIONAL',
-            tech: ['Svelte', 'SvelteKit', 'Node.js', 'SST', 'Deployed to AWS']
+            type: 'PERSONAL',
+            tech: ['Svelte', 'SvelteKit', 'Node.js', 'Deployed to Vercel']
         }
     ];
 </script>
